@@ -41,24 +41,24 @@ const CurrencyConverter = () => {
 
   return (
     <div
-      className="min-h-screen f-full w-full scroll-overflow bg-cover bg-center relative"
+      className="min-h-screen h-full w-full scroll-overflow bg-cover bg-center relative md-small"
       style={{ backgroundImage: "url('/bg.jpg')" }}
     >
       <div className="p-4 md:w-1/2 mx-auto relative scroll-overflow">
-        <h1 className="text-4xl font-semibold mb-4 md-small flex item-center justify-center">
+        <h1 className="text-4xl font-bold mb-4 px-4 py-4 my-4">
           Currency Converter
         </h1>
-        <div className="flex items-center mb-4 md-small">
+        <div className="flex flex-col md:flex-row md:items-center mb-4 my-4">
           <input
             type="number"
             value={amount}
             onChange={(e) => setAmount(parseFloat(e.target.value))}
-            className="border rounded p-2 mr-2 flex-1 md-small"
+            className="border rounded p-2 mb-2 md:mb-0 md:mr-2 flex-1 px-2 py-2 my-4"
           />
           <select
             value={fromCurrency}
             onChange={(e) => setFromCurrency(e.target.value)}
-            className="border rounded p-2 mx-2 md-small"
+            className="border rounded p-2 mr-2 md:flex-1 px-2 py-2 my-4"
           >
             {Object.keys(exchangeRates).map((currency) => (
               <option key={currency} value={currency}>
@@ -66,11 +66,13 @@ const CurrencyConverter = () => {
               </option>
             ))}
           </select>
-          <span className="mx-2">to</span>
+          <span className="mx-4 my-4 font-bold text-xl justify-center ">
+            to
+          </span>
           <select
             value={toCurrency}
             onChange={(e) => setToCurrency(e.target.value)}
-            className="border rounded p-2 mx-2 md-small "
+            className="border rounded p-2 mr-2 md:flex-1 px-2 py-2 gap-2"
           >
             {Object.keys(exchangeRates).map((currency) => (
               <option key={currency} value={currency}>
@@ -80,7 +82,7 @@ const CurrencyConverter = () => {
           </select>
           <button
             onClick={convertCurrency}
-            className="bg-blue-500 text-white px-4 py-2 rounded md-small"
+            className="bg-blue-500 text-white rounded md-small px-4 py-2 rounded-lg ring-1 ring-black gap-2 my-4 "
           >
             Convert
           </button>

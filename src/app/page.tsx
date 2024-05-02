@@ -4,7 +4,7 @@ import CurrencyConverter from "./components/CurrencyConvertor";
 
 const Home = () => {
   return (
-    <div className="h-screen bg-cover bg-center flex items-center justify-center">
+    <div className="h-screen bg-cover bg-center overflow-scroll flex items-center justify-center">
       <CurrencyConverter />
     </div>
   );
